@@ -1,0 +1,963 @@
+/* =====================================================
+   VARIÁVEIS DO PROJETO
+===================================================== */
+
+:root {
+
+    --cor-primaria: #2563eb;
+    --cor-primaria-escura: #1e40af;
+
+    --cor-secundaria: #16a34a;
+    --cor-destaque: #f59e0b;
+
+    --cor-fundo: #ffffff;
+    --cor-fundo-claro: #f8fafc;
+
+    --cor-texto: #1f2937;
+    --cor-texto-secundario: #6b7280;
+
+    --cor-borda: #e5e7eb;
+
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 12px;
+    --espaco-4: 16px;
+    --espaco-5: 24px;
+    --espaco-6: 32px;
+    --espaco-7: 48px;
+    --espaco-8: 64px;
+
+    --raio-pequeno: 6px;
+    --raio-medio: 12px;
+    --raio-grande: 20px;
+
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    --largura-maxima: 1200px;
+}
+
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    line-height: 1.6;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+.container {
+
+    width: 90%;
+
+    max-width: var(--largura-maxima);
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.site-header {
+
+    background-color: var(--cor-fundo);
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.header-content {
+
+    min-height: 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: var(--espaco-5);
+}
+
+
+.logo {
+
+    color: var(--cor-primaria);
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+}
+
+
+nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--espaco-5);
+}
+
+
+nav a {
+
+    color: var(--cor-texto);
+
+    font-weight: 600;
+
+    padding: var(--espaco-2) var(--espaco-3);
+
+    border-radius: var(--raio-pequeno);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+nav a:hover {
+
+    background-color: #eff6ff;
+
+    color: var(--cor-primaria);
+}
+
+
+nav a:focus {
+
+    outline: 3px solid var(--cor-destaque);
+
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   BOTÃO DO MENU MOBILE
+===================================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background-color: var(--cor-primaria);
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: var(--raio-pequeno);
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.menu-toggle:hover {
+
+    background-color: var(--cor-primaria-escura);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 550px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #ffffff
+        );
+
+    padding: var(--espaco-8) 5%;
+}
+
+
+.hero-content {
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.tag {
+
+    display: inline-block;
+
+    background-color: #dcfce7;
+
+    color: var(--cor-secundaria);
+
+    padding: 6px 14px;
+
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    margin-bottom: var(--espaco-4);
+}
+
+
+.hero h1 {
+
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        4rem
+    );
+
+    line-height: 1.15;
+
+    margin-bottom: var(--espaco-5);
+}
+
+
+.hero p {
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 1.15rem;
+
+    max-width: 650px;
+
+    margin: 0 auto var(--espaco-6);
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--espaco-4);
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.btn {
+
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: var(--raio-pequeno);
+
+    font-weight: bold;
+
+    border: 2px solid transparent;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--sombra);
+}
+
+
+.btn:focus {
+
+    outline: 3px solid var(--cor-destaque);
+
+    outline-offset: 3px;
+}
+
+
+.btn-primary-custom {
+
+    background-color: var(--cor-primaria);
+
+    color: white;
+}
+
+
+.btn-primary-custom:hover {
+
+    background-color: var(--cor-primaria-escura);
+
+    color: white;
+}
+
+
+.btn-secondary-custom {
+
+    background-color: var(--cor-secundaria);
+
+    color: white;
+}
+
+
+.btn-secondary-custom:hover {
+
+    background-color: #15803d;
+
+    color: white;
+}
+
+
+.btn-light-custom {
+
+    background-color: white;
+
+    color: var(--cor-primaria);
+}
+
+
+.btn-light-custom:hover {
+
+    background-color: #f1f5f9;
+
+    color: var(--cor-primaria-escura);
+}
+
+
+/* =====================================================
+   SEÇÃO SOBRE
+===================================================== */
+
+.sobre {
+
+    padding: var(--espaco-8) 0;
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto var(--espaco-7);
+}
+
+
+.section-title h2 {
+
+    font-size: 2.2rem;
+
+    margin-bottom: var(--espaco-4);
+}
+
+
+.section-title p {
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: var(--espaco-5);
+}
+
+
+.card-custom {
+
+    background-color: white;
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: var(--raio-medio);
+
+    padding: var(--espaco-6);
+
+    text-align: center;
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card-custom:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.card-icon {
+
+    font-size: 2.5rem;
+
+    margin-bottom: var(--espaco-4);
+}
+
+
+.card-custom h3 {
+
+    margin-bottom: var(--espaco-3);
+}
+
+
+.card-custom p {
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =====================================================
+   CHAMADA PARA AÇÃO
+===================================================== */
+
+.chamada {
+
+    background-color: var(--cor-primaria);
+
+    color: white;
+
+    text-align: center;
+
+    padding: var(--espaco-8) 5%;
+}
+
+
+.chamada h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: var(--espaco-3);
+}
+
+
+.chamada p {
+
+    max-width: 650px;
+
+    margin: 0 auto var(--espaco-5);
+
+    opacity: 0.95;
+}
+
+
+/* =====================================================
+   CONTEÚDO GERADO PELA SPA
+===================================================== */
+
+.pagina {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: var(--espaco-8) 0;
+
+    min-height: 500px;
+}
+
+
+.pagina h1 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: var(--espaco-4);
+}
+
+
+.pagina > p {
+
+    color: var(--cor-texto-secundario);
+
+    margin-bottom: var(--espaco-6);
+}
+
+
+/* =====================================================
+   CARDS DOS PROJETOS DA SPA
+===================================================== */
+
+.card {
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: var(--raio-medio);
+
+    padding: var(--espaco-5);
+
+    margin-bottom: var(--espaco-5);
+
+    box-shadow: var(--sombra);
+
+    background-color: white;
+}
+
+
+.card h2 {
+
+    margin-bottom: var(--espaco-3);
+}
+
+
+.card p {
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+#formCadastro {
+
+    max-width: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--espaco-3);
+
+    background-color: var(--cor-fundo-claro);
+
+    padding: var(--espaco-6);
+
+    border-radius: var(--raio-medio);
+
+    border: 1px solid var(--cor-borda);
+}
+
+
+#formCadastro label {
+
+    font-weight: bold;
+
+    margin-top: var(--espaco-2);
+}
+
+
+#formCadastro input,
+#formCadastro select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid var(--cor-borda);
+
+    border-radius: var(--raio-pequeno);
+
+    background-color: white;
+
+    font-size: 1rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#formCadastro input:focus,
+#formCadastro select:focus {
+
+    outline: none;
+
+    border-color: var(--cor-primaria);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.15);
+}
+
+
+#formCadastro input:valid {
+
+    border-color: var(--cor-secundaria);
+}
+
+
+#formCadastro input.erro {
+
+    border-color: #dc2626;
+
+    background-color: #fef2f2;
+}
+
+
+#formCadastro button {
+
+    margin-top: var(--espaco-4);
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: var(--raio-pequeno);
+
+    background-color: var(--cor-primaria);
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+
+#formCadastro button:hover {
+
+    background-color: var(--cor-primaria-escura);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MENSAGENS DO FORMULÁRIO
+===================================================== */
+
+.mensagem-form {
+
+    padding: 12px;
+
+    border-radius: var(--raio-pequeno);
+
+    font-weight: bold;
+
+    margin-top: var(--espaco-3);
+}
+
+
+.mensagem-form.erro {
+
+    background-color: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+.mensagem-form.sucesso {
+
+    background-color: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+.site-footer {
+
+    background-color: #111827;
+
+    color: white;
+
+    margin-top: auto;
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: var(--espaco-7);
+
+    padding: var(--espaco-7) 0;
+}
+
+
+.footer-content h2,
+.footer-content h3 {
+
+    margin-bottom: var(--espaco-3);
+}
+
+
+.footer-content p {
+
+    color: #d1d5db;
+
+    margin-bottom: var(--espaco-2);
+}
+
+
+.footer-bottom {
+
+    text-align: center;
+
+    border-top: 1px solid #374151;
+
+    padding: var(--espaco-4);
+}
+
+
+.footer-bottom p {
+
+    color: #9ca3af;
+
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .hero {
+
+        min-height: 500px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .header-content {
+
+        position: relative;
+
+        flex-wrap: wrap;
+
+        padding: 16px 0;
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    nav {
+
+        width: 100%;
+    }
+
+
+    nav ul {
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        background-color: white;
+
+        border-top: 1px solid var(--cor-borda);
+
+        padding: 12px 0;
+    }
+
+
+    nav ul.active {
+
+        display: flex;
+    }
+
+
+    nav a {
+
+        display: block;
+
+        text-align: center;
+
+        padding: 12px;
+    }
+
+
+    .hero {
+
+        min-height: 500px;
+
+        padding: var(--espaco-7) 5%;
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.3rem;
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - CELULAR PEQUENO
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size: 2rem;
+    }
+
+
+    .hero-actions {
+
+        flex-direction: column;
+    }
+
+
+    .hero-actions .btn {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .pagina h1 {
+
+        font-size: 2rem;
+    }
+
+
+    #formCadastro {
+
+        padding: var(--espaco-4);
+    }
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
